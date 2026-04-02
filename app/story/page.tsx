@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,22 +9,6 @@ export const metadata: Metadata = {
     "From a cane field in Raceland, Louisiana to the boardroom. 34 years of earning the right to say hard things.",
 };
 
-function PhotoPlaceholder({ label }: { label: string }) {
-  return (
-    <div className="relative aspect-[4/3] bg-[#1a1a1a] overflow-hidden my-8">
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-[#444]">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="opacity-30">
-          <rect x="3" y="3" width="18" height="18" rx="1"/>
-          <circle cx="8.5" cy="8.5" r="1.5"/>
-          <polyline points="21 15 16 10 5 21"/>
-        </svg>
-        <span className="text-[10px] tracking-[0.2em] uppercase text-[#555] opacity-50">{label}</span>
-      </div>
-      <div className="absolute top-0 left-0 w-5 h-5 border-t border-l border-[#c0392b]/60" />
-      <div className="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-[#c0392b]/60" />
-    </div>
-  );
-}
 
 const arc = [
   { role: "Tugboat Deckhand", detail: "The river. Before titles meant anything." },
@@ -67,7 +52,14 @@ export default function StoryPage() {
                 Raceland, Louisiana
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
-              <PhotoPlaceholder label="Cane field / early years" />
+              <div className="relative aspect-[4/3] overflow-hidden my-8">
+                <Image
+                  src="/images/tiller-kid.webp"
+                  alt="Young Darrel — Raceland, Louisiana"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
             <div className="space-y-5">
               <h2
@@ -180,7 +172,14 @@ export default function StoryPage() {
               </p>
             </div>
             <div>
-              <PhotoPlaceholder label="Photo placeholder" />
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src="/images/shredded-yoga.webp"
+                  alt="Darrel Ardoin — mind and body discipline"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div className="bg-[#0f0f0f] p-8 mt-2">
                 <p
                   className="text-lg font-medium text-[#f8f7f4] leading-relaxed"

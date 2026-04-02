@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -38,7 +39,18 @@ export default function PCSPage() {
       <main className="flex-1">
 
         {/* ── INDUSTRIAL DARK HERO ──────────────── */}
-        <section className="bg-[#111] border-b border-[#222] relative overflow-hidden">
+        <section className="border-b border-[#222] relative overflow-hidden bg-[#111]">
+          {/* Background photo */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/desktop-point.webp"
+              alt="Desktop Point — field operations"
+              fill
+              className="object-cover opacity-20"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#111] via-[#111]/80 to-[#111]/40" />
+          </div>
           {/* Grid texture overlay */}
           <div
             className="absolute inset-0 opacity-[0.04]"

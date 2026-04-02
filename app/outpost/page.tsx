@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -58,23 +59,17 @@ export default function OutpostPage() {
           </div>
         </section>
 
-        {/* ── IMAGE PLACEHOLDERS ────────────────── */}
-        <section className="border-b border-[#2a3020] bg-[#161b11]">
-          <div className="max-w-6xl mx-auto px-6 py-12">
-            <div className="grid grid-cols-3 gap-px bg-[#2a3020]">
-              {["Land / Aerial", "Horses", "Fire Gathering"].map((label) => (
-                <div key={label} className="aspect-[4/3] bg-[#1a1f14] relative overflow-hidden">
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-[#3a4a2a] opacity-60">
-                      <rect x="3" y="3" width="18" height="18" rx="1"/>
-                      <circle cx="8.5" cy="8.5" r="1.5"/>
-                      <polyline points="21 15 16 10 5 21"/>
-                    </svg>
-                    <span className="text-[9px] tracking-[0.2em] uppercase text-[#3a4a2a]">{label}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+        {/* ── HERO IMAGE ────────────────────────── */}
+        <section className="border-b border-[#2a3020]">
+          <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+            <Image
+              src="/images/horse-sunset.webp"
+              alt="Horse at sunset — The Outpost, Mississippi"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1a1f14] via-transparent to-transparent" />
           </div>
         </section>
 

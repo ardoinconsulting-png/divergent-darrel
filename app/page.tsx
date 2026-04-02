@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
@@ -81,19 +82,16 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Image placeholder */}
+            {/* Hero image */}
             <div className="order-1 md:order-2">
-              <div className="relative aspect-[3/4] bg-[#1a1a1a] overflow-hidden">
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-[#444]">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="opacity-30">
-                    <rect x="3" y="3" width="18" height="18" rx="1"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <polyline points="21 15 16 10 5 21"/>
-                  </svg>
-                  <span className="text-[10px] tracking-[0.2em] uppercase text-[#555] opacity-50">
-                    Command Center Photo
-                  </span>
-                </div>
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image
+                  src="/images/command-center.webp"
+                  alt="Darrel Ardoin — Command Center"
+                  fill
+                  className="object-cover"
+                  priority
+                />
                 <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#c0392b]" />
                 <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#c0392b]" />
               </div>
