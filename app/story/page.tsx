@@ -60,7 +60,7 @@ export default function StoryPage() {
                   alt="Young Darrel — Raceland, Louisiana"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover object-top"
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function StoryPage() {
                   alt={`Darrel Ardoin — ${i + 1}`}
                   fill
                   sizes="(max-width: 768px) 50vw, 600px"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             ))}
@@ -210,7 +210,7 @@ export default function StoryPage() {
                   alt="Snubbing unit"
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover object-[center_top]"
+                  className="object-contain"
                 />
               </div>
               {/* oil-2: Red Adair gear — keep as is */}
@@ -220,7 +220,7 @@ export default function StoryPage() {
                   alt="Well intervention gear"
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               {/* oil-3: blue sky rig — show full picture from top */}
@@ -230,7 +230,7 @@ export default function StoryPage() {
                   alt="Rig against blue sky"
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-cover object-[center_top]"
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -244,7 +244,7 @@ export default function StoryPage() {
                   alt="Command center"
                   fill
                   sizes="50vw"
-                  className="object-cover object-center"
+                  className="object-contain"
                 />
               </div>
               {/* oil-5: field closeup face — pull focus to face */}
@@ -254,7 +254,7 @@ export default function StoryPage() {
                   alt="Field operations — face"
                   fill
                   sizes="50vw"
-                  className="object-cover object-[50%_30%]"
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -271,7 +271,7 @@ export default function StoryPage() {
                 alt="Darrel Ardoin"
                 fill
                 sizes="(max-width: 768px) 50vw, 600px"
-                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                className="object-contain"
               />
             </div>
             {/* story-4: kneeling in uniform — full frame center */}
@@ -281,7 +281,7 @@ export default function StoryPage() {
                 alt="Darrel Ardoin"
                 fill
                 sizes="(max-width: 768px) 50vw, 600px"
-                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                className="object-contain"
               />
             </div>
           </div>
@@ -384,7 +384,7 @@ export default function StoryPage() {
                   alt="Darrel Ardoin"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-top"
+                  className="object-contain"
                 />
               </div>
               <div className="bg-[#0f0f0f] p-8">
