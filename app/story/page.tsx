@@ -180,7 +180,8 @@ export default function StoryPage() {
                 <em className="not-italic text-[#f8f7f4] font-semibold">
                   &ldquo;I helped build an operation from nine million to over two
                   hundred million. The day I left, they lost thirty million
-                  dollars in annual revenue. Then I decided it was my turn.&rdquo;
+                  dollars in annual revenue. If I could do it for them, I could
+                  do it for myself and others.&rdquo;
                 </em>
               </p>
               <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
