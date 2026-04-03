@@ -199,35 +199,63 @@ export default function StoryPage() {
             <p className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#c0392b] mb-6">
               14 Years in the Field
             </p>
+
+            {/* Top row — 3 up */}
             <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-[#1f1f1f]">
-              {[
-                "/images/oil-1.webp",
-                "/images/oil-2.webp",
-                "/images/oil-3.webp",
-              ].map((src, i) => (
-                <div key={i} className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
-                  <Image
-                    src={src}
-                    alt={`Oilfield operations ${i + 1}`}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
+              {/* oil-1: red snubbing unit — show full rig from top */}
+              <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
+                <Image
+                  src="/images/oil-1.webp"
+                  alt="Snubbing unit"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  className="object-cover object-[center_top]"
+                />
+              </div>
+              {/* oil-2: Red Adair gear — keep as is */}
+              <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
+                <Image
+                  src="/images/oil-2.webp"
+                  alt="Well intervention gear"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+              {/* oil-3: blue sky rig — show full picture from top */}
+              <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
+                <Image
+                  src="/images/oil-3.webp"
+                  alt="Rig against blue sky"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  className="object-cover object-[center_top]"
+                />
+              </div>
             </div>
+
+            {/* Middle row — 2 up */}
             <div className="grid grid-cols-2 gap-px bg-[#1f1f1f] mt-px">
-              {["/images/oil-4.webp", "/images/oil-6.webp"].map((src, i) => (
-                <div key={i} className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "16/9" }}>
-                  <Image
-                    src={src}
-                    alt={`Oilfield operations ${i + 4}`}
-                    fill
-                    sizes="50vw"
-                    className="object-cover"
-                  />
-                </div>
-              ))}
+              {/* oil-4: command center with screens — center on face */}
+              <div className="relative overflow-hidden bg-[#111] h-72 md:h-80">
+                <Image
+                  src="/images/oil-4.webp"
+                  alt="Command center"
+                  fill
+                  sizes="50vw"
+                  className="object-cover object-center"
+                />
+              </div>
+              {/* oil-5: field closeup face — pull focus to face */}
+              <div className="relative overflow-hidden bg-[#111] h-72 md:h-80">
+                <Image
+                  src="/images/oil-5.webp"
+                  alt="Field operations — face"
+                  fill
+                  sizes="50vw"
+                  className="object-cover object-[50%_30%]"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -235,17 +263,26 @@ export default function StoryPage() {
         {/* ── STORY PHOTOS — 2UP ────────────────────── */}
         <section className="border-b border-[#e2e0db]">
           <div className="max-w-6xl mx-auto grid grid-cols-2 gap-px bg-[#e2e0db]">
-            {["/images/story-3.webp", "/images/story-4.webp"].map((src, i) => (
-              <div key={i} className="relative overflow-hidden bg-[#1a1a1a] h-64 md:h-80">
-                <Image
-                  src={src}
-                  alt={`Darrel Ardoin — ${i + 3}`}
-                  fill
-                  sizes="(max-width: 768px) 50vw, 600px"
-                  className="object-cover hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-            ))}
+            {/* story-3: chainsaw — full frame center */}
+            <div className="relative overflow-hidden bg-[#1a1a1a] h-64 md:h-80">
+              <Image
+                src="/images/story-3.webp"
+                alt="Darrel Ardoin"
+                fill
+                sizes="(max-width: 768px) 50vw, 600px"
+                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            {/* story-4: kneeling in uniform — full frame center */}
+            <div className="relative overflow-hidden bg-[#1a1a1a] h-64 md:h-80">
+              <Image
+                src="/images/story-4.webp"
+                alt="Darrel Ardoin"
+                fill
+                sizes="(max-width: 768px) 50vw, 600px"
+                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+              />
+            </div>
           </div>
         </section>
 
