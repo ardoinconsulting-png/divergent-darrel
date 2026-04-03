@@ -54,13 +54,13 @@ export default function StoryPage() {
                 Raceland, Louisiana
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
-              <div className="relative w-full mt-8 overflow-hidden h-80 md:h-[28rem] bg-[#f0ede8]">
+              <div className="relative w-full mt-8 overflow-hidden h-80 md:h-[28rem]">
                 <Image
                   src="/images/tiller-kid.webp"
                   alt="Young Darrel — Raceland, Louisiana"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-contain"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
@@ -116,7 +116,7 @@ export default function StoryPage() {
                   alt={`Darrel Ardoin — ${i + 1}`}
                   fill
                   sizes="33vw"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
             ))}
@@ -173,7 +173,7 @@ export default function StoryPage() {
                   alt="Snubbing unit"
                   fill
                   sizes="50vw"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
               <div className="relative overflow-hidden bg-[#111] h-56 md:h-72">
@@ -182,7 +182,7 @@ export default function StoryPage() {
                   alt="Well intervention gear"
                   fill
                   sizes="50vw"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function StoryPage() {
                   alt={`Field operations ${i + 1}`}
                   fill
                   sizes="33vw"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
             ))}
@@ -259,7 +259,7 @@ export default function StoryPage() {
                   alt="Darrel Ardoin"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -353,7 +353,7 @@ export default function StoryPage() {
                   alt="Darrel Ardoin"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
               <div className="bg-[#0f0f0f] p-8">
