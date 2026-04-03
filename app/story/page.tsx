@@ -44,16 +44,22 @@ export default function StoryPage() {
           </div>
         </section>
 
-        {/* ── ORIGIN — RACELAND (tiller-kid side frame) ── */}
+        {/* ── ORIGIN — RACELAND ─────────────────────── */}
+        {/*
+          tiller-kid: user confirmed good — object-cover object-top, fixed height.
+          No changes here.
+        */}
         <section className="border-b border-[#e2e0db] bg-white">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-[5fr_7fr] gap-12 items-start">
-
-            {/* Left: tiller-kid photo */}
             <div>
               <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#6b6b6b]">
                 Raceland, Louisiana
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
+              {/*
+                Fix: no background color — tiller-kid fills frame with object-cover.
+                Fixed height container, object-top anchors to face/top of image.
+              */}
               <div className="relative w-full mt-8 overflow-hidden h-80 md:h-[28rem]">
                 <Image
                   src="/images/tiller-kid.webp"
@@ -64,8 +70,6 @@ export default function StoryPage() {
                 />
               </div>
             </div>
-
-            {/* Right: text */}
             <div className="space-y-5 md:pt-12">
               <h2
                 className="text-2xl md:text-3xl font-bold text-[#0f0f0f] leading-tight"
@@ -107,23 +111,29 @@ export default function StoryPage() {
         </section>
 
         {/* ── 3-UP: story-1, story-2, story-3 ──────────── */}
+        {/*
+          Fix: all 3 cells use the same aspectRatio: "3/4" (portrait).
+          Consistent ratio in a single grid row = no height conflict = no dark gaps.
+          No background color needed — object-cover fills completely.
+          object-top anchors subject matter at top of frame.
+        */}
         <section className="border-b border-[#e2e0db]">
           <div className="grid grid-cols-3 gap-px bg-[#e2e0db]">
             {["/images/story-1.webp", "/images/story-2.webp", "/images/story-3.webp"].map((src, i) => (
-              <div key={i} className="relative overflow-hidden bg-[#1a1a1a] h-80 md:h-[28rem]">
+              <div key={i} className="relative overflow-hidden" style={{ aspectRatio: "3/4" }}>
                 <Image
                   src={src}
                   alt={`Darrel Ardoin — ${i + 1}`}
                   fill
                   sizes="33vw"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
             ))}
           </div>
         </section>
 
-        {/* ── THE ARC — NARRATIVE WITH INLINE PHOTOS ─── */}
+        {/* ── THE ARC — NARRATIVE ───────────────────── */}
         <section className="border-b border-[#e2e0db] bg-[#0f0f0f]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
             <div className="mb-10">
@@ -139,7 +149,6 @@ export default function StoryPage() {
               </h2>
             </div>
 
-            {/* First block of narrative */}
             <div className="max-w-3xl space-y-6 mb-12">
               <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
                 The river. The badge. The Harley. The clubs. The rigs. Each one
@@ -165,29 +174,34 @@ export default function StoryPage() {
               </p>
             </div>
 
-            {/* Inline 2-up: oil-1 + oil-2 breaking the narrative */}
+            {/* Inline 2-up: oil-1 + oil-2 — BOTH same aspectRatio: "4/3" */}
+            {/*
+              Fix: both cells match at 4/3 landscape. No height mismatch.
+              oil-1 (snubbing unit, likely portrait) uses object-top to show rig top.
+              oil-2 uses object-center.
+              No background needed — object-cover fills both completely.
+            */}
             <div className="grid grid-cols-2 gap-px bg-[#1f1f1f] mb-12">
-              <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "3/4" }}>
+              <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
                 <Image
                   src="/images/oil-1.webp"
                   alt="Snubbing unit"
                   fill
                   sizes="50vw"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
-              <div className="relative overflow-hidden bg-[#111] h-56 md:h-72">
+              <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
                 <Image
                   src="/images/oil-2.webp"
                   alt="Well intervention gear"
                   fill
                   sizes="50vw"
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
 
-            {/* Second block of narrative */}
             <div className="max-w-3xl space-y-6">
               <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
                 Heavy civil and maritime work followed — dragline cranes, spud
@@ -222,47 +236,54 @@ export default function StoryPage() {
         </section>
 
         {/* ── 3-UP: oil-3, oil-4, oil-5 ────────────────── */}
+        {/*
+          Fix: all 3 cells use the same aspectRatio: "4/3" (landscape).
+          Previously oil-3 was 3/4 and oil-4/5 were 4/3 — the height mismatch
+          caused CSS grid to stretch cells unevenly, creating dark side gaps.
+          Now all 3 match: grid row height is consistent, object-cover fills every cell.
+          oil-3 (rig/sky shot) uses object-top to anchor the rig top.
+        */}
         <section className="border-b border-[#1f1f1f] bg-[#0a0a0a]">
-          <div className="max-w-6xl mx-auto px-6 pt-4 pb-0">
-            <p className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#c0392b] py-6">
+          <div className="max-w-6xl mx-auto px-6 py-6">
+            <p className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#c0392b]">
               14 Years in the Field
             </p>
           </div>
           <div className="grid grid-cols-3 gap-px bg-[#1f1f1f]">
-            <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "3/4" }}>
-              <Image src="/images/oil-3.webp" alt="Rig against blue sky" fill sizes="33vw" className="object-cover" />
+            <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
+              <Image src="/images/oil-3.webp" alt="Rig against blue sky" fill sizes="33vw" className="object-cover object-top" />
             </div>
-            <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
-              <Image src="/images/oil-4.webp" alt="Command center" fill sizes="33vw" className="object-cover" />
+            <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
+              <Image src="/images/oil-4.webp" alt="Command center" fill sizes="33vw" className="object-cover object-center" />
             </div>
-            <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
-              <Image src="/images/oil-5.webp" alt="Field operations" fill sizes="33vw" className="object-cover" />
+            <div className="relative overflow-hidden" style={{ aspectRatio: "4/3" }}>
+              <Image src="/images/oil-5.webp" alt="Field operations" fill sizes="33vw" className="object-cover object-center" />
             </div>
           </div>
         </section>
 
-        {/* ── WHAT HE BUILT (story-4 side frame) ───────── */}
+        {/* ── WHAT HE BUILT — story-4 side frame ───────── */}
+        {/*
+          Fix: removed bg-[#1a1a1a]. Container is aspectRatio: "3/4" (portrait).
+          object-cover fills completely — no dark edges possible without a bg color.
+        */}
         <section className="border-b border-[#e2e0db] bg-white">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-start">
-
-            {/* Left: story-4 photo */}
             <div>
               <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#6b6b6b]">
                 What He Built
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
-              <div className="relative w-full mt-8 overflow-hidden bg-[#1a1a1a]" style={{ aspectRatio: "3/4" }}>
+              <div className="relative w-full mt-8 overflow-hidden" style={{ aspectRatio: "3/4" }}>
                 <Image
                   src="/images/story-4.webp"
                   alt="Darrel Ardoin"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
-
-            {/* Right: text */}
             <div className="space-y-5 md:pt-12">
               <h2
                 className="text-2xl md:text-3xl font-bold text-[#0f0f0f] leading-tight"
@@ -299,7 +320,11 @@ export default function StoryPage() {
           </div>
         </section>
 
-        {/* ── NEUROLOGICAL WIRING (preview side frame) ─── */}
+        {/* ── NEUROLOGICAL WIRING — preview side frame ─── */}
+        {/*
+          preview: user confirmed PERFECT. No changes to this image.
+          bg-[#1a1a1a] kept — preview is portrait 3/4 and fills its container cleanly.
+        */}
         <section className="border-b border-[#e2e0db]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -351,7 +376,7 @@ export default function StoryPage() {
                   alt="Darrel Ardoin"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover object-center"
                 />
               </div>
               <div className="bg-[#0f0f0f] p-8">
