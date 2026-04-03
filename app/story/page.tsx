@@ -320,18 +320,13 @@ export default function StoryPage() {
                 never the size of their opportunity. It is how they handle cash,
                 people, and pressure simultaneously.
               </p>
-              <blockquote className="border-l-2 border-[#c0392b] pl-5 pt-1">
-                <p
-                  className="text-base font-medium text-[#0f0f0f] leading-relaxed"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  &ldquo;I have no desire to own a business right now. What lights me
-                  up is helping other people&apos;s businesses succeed.&rdquo;
-                </p>
-              </blockquote>
               <p className="text-base text-[#4a4a4a] leading-relaxed">
-                That&apos;s not a retreat from building. That&apos;s a man who has built
-                enough to know where his leverage actually is.
+                What lights him up now is integrating into other people&apos;s
+                systems — walking into an operation, reading what&apos;s actually
+                happening, and delivering the perspective they couldn&apos;t see from
+                the inside. That capability is built from having done the work
+                at every level — not from observing it. He adapts to the
+                environment fast because he has operated in all of them.
               </p>
             </div>
           </div>
