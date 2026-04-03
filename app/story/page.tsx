@@ -110,7 +110,7 @@ export default function StoryPage() {
         <section className="border-b border-[#e2e0db]">
           <div className="grid grid-cols-3 gap-px bg-[#e2e0db]">
             {["/images/story-1.webp", "/images/story-2.webp", "/images/story-3.webp"].map((src, i) => (
-              <div key={i} className="relative overflow-hidden bg-[#1a1a1a] h-64 md:h-80">
+              <div key={i} className="relative overflow-hidden bg-[#1a1a1a] h-80 md:h-[28rem]">
                 <Image
                   src={src}
                   alt={`Darrel Ardoin — ${i + 1}`}
@@ -167,7 +167,7 @@ export default function StoryPage() {
 
             {/* Inline 2-up: oil-1 + oil-2 breaking the narrative */}
             <div className="grid grid-cols-2 gap-px bg-[#1f1f1f] mb-12">
-              <div className="relative overflow-hidden bg-[#111] h-56 md:h-72">
+              <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "3/4" }}>
                 <Image
                   src="/images/oil-1.webp"
                   alt="Snubbing unit"
@@ -229,17 +229,15 @@ export default function StoryPage() {
             </p>
           </div>
           <div className="grid grid-cols-3 gap-px bg-[#1f1f1f]">
-            {["/images/oil-3.webp", "/images/oil-4.webp", "/images/oil-5.webp"].map((src, i) => (
-              <div key={i} className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
-                <Image
-                  src={src}
-                  alt={`Field operations ${i + 1}`}
-                  fill
-                  sizes="33vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
+            <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "3/4" }}>
+              <Image src="/images/oil-3.webp" alt="Rig against blue sky" fill sizes="33vw" className="object-cover" />
+            </div>
+            <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
+              <Image src="/images/oil-4.webp" alt="Command center" fill sizes="33vw" className="object-cover" />
+            </div>
+            <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
+              <Image src="/images/oil-5.webp" alt="Field operations" fill sizes="33vw" className="object-cover" />
+            </div>
           </div>
         </section>
 
@@ -253,7 +251,7 @@ export default function StoryPage() {
                 What He Built
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
-              <div className="relative w-full mt-8 overflow-hidden h-72 md:h-96 bg-[#1a1a1a]">
+              <div className="relative w-full mt-8 overflow-hidden bg-[#1a1a1a]" style={{ aspectRatio: "3/4" }}>
                 <Image
                   src="/images/story-4.webp"
                   alt="Darrel Ardoin"
