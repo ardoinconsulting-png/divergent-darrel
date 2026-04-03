@@ -59,16 +59,15 @@ export default function OutpostPage() {
         </section>
 
         {/* ── HERO PHOTO — HORSE SUNSET ─────────────── */}
-        <section className="border-b border-[#2a3020]">
-          <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
+        <section className="border-b border-[#2a3020] bg-[#1a1f14]">
+          <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
             <Image
               src="/images/horse-sunset.webp"
               alt="Horse at sunset — The Outpost, Mississippi"
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1a1f14] via-transparent to-transparent" />
           </div>
         </section>
 
@@ -194,18 +193,6 @@ export default function OutpostPage() {
           </div>
         </section>
 
-        {/* ── BONFIRE PHOTO ─────────────────────────── */}
-        <section className="border-b border-[#2a3020]">
-          <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
-            <Image
-              src="/images/outpost-5.webp"
-              alt="Bonfire at The Outpost"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#161b11] via-transparent to-transparent" />
-          </div>
-        </section>
 
         {/* ── GOFUNDME CTA ──────────────────────────── */}
         <section className="border-b border-[#2a3020] bg-[#1a1f14]">
