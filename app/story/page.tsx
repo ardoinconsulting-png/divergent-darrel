@@ -44,17 +44,17 @@ export default function StoryPage() {
           </div>
         </section>
 
-        {/* ── ORIGIN — RACELAND ─────────────────────── */}
+        {/* ── ORIGIN — RACELAND (tiller-kid side frame) ── */}
         <section className="border-b border-[#e2e0db] bg-white">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-[5fr_7fr] gap-12 items-start">
 
-            {/* Left: photo */}
+            {/* Left: tiller-kid photo */}
             <div>
               <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#6b6b6b]">
                 Raceland, Louisiana
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
-              <div className="relative w-full mt-8 overflow-hidden h-80 md:h-[28rem]">
+              <div className="relative w-full mt-8 overflow-hidden h-80 md:h-[28rem] bg-[#f0ede8]">
                 <Image
                   src="/images/tiller-kid.webp"
                   alt="Young Darrel — Raceland, Louisiana"
@@ -106,16 +106,16 @@ export default function StoryPage() {
           </div>
         </section>
 
-        {/* ── STORY PHOTOS — 2UP ────────────────────── */}
+        {/* ── 3-UP: story-1, story-2, story-3 ──────────── */}
         <section className="border-b border-[#e2e0db]">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 gap-px bg-[#e2e0db]">
-            {["/images/story-1.webp", "/images/story-2.webp"].map((src, i) => (
+          <div className="grid grid-cols-3 gap-px bg-[#e2e0db]">
+            {["/images/story-1.webp", "/images/story-2.webp", "/images/story-3.webp"].map((src, i) => (
               <div key={i} className="relative overflow-hidden bg-[#1a1a1a] h-64 md:h-80">
                 <Image
                   src={src}
                   alt={`Darrel Ardoin — ${i + 1}`}
                   fill
-                  sizes="(max-width: 768px) 50vw, 600px"
+                  sizes="33vw"
                   className="object-contain"
                 />
               </div>
@@ -123,7 +123,7 @@ export default function StoryPage() {
           </div>
         </section>
 
-        {/* ── THE ARC — FLOWING NARRATIVE ───────────── */}
+        {/* ── THE ARC — NARRATIVE WITH INLINE PHOTOS ─── */}
         <section className="border-b border-[#e2e0db] bg-[#0f0f0f]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
             <div className="mb-10">
@@ -139,7 +139,8 @@ export default function StoryPage() {
               </h2>
             </div>
 
-            <div className="max-w-3xl space-y-6">
+            {/* First block of narrative */}
+            <div className="max-w-3xl space-y-6 mb-12">
               <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
                 The river. The badge. The Harley. The clubs. The rigs. Each one
                 was a different school, and none of them handed out diplomas.
@@ -162,6 +163,32 @@ export default function StoryPage() {
                 make the management books. Most leadership consultants have read
                 about those environments. He lived in them.
               </p>
+            </div>
+
+            {/* Inline 2-up: oil-1 + oil-2 breaking the narrative */}
+            <div className="grid grid-cols-2 gap-px bg-[#1f1f1f] mb-12">
+              <div className="relative overflow-hidden bg-[#111] h-56 md:h-72">
+                <Image
+                  src="/images/oil-1.webp"
+                  alt="Snubbing unit"
+                  fill
+                  sizes="50vw"
+                  className="object-contain"
+                />
+              </div>
+              <div className="relative overflow-hidden bg-[#111] h-56 md:h-72">
+                <Image
+                  src="/images/oil-2.webp"
+                  alt="Well intervention gear"
+                  fill
+                  sizes="50vw"
+                  className="object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Second block of narrative */}
+            <div className="max-w-3xl space-y-6">
               <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
                 Heavy civil and maritime work followed — dragline cranes, spud
                 barges, the kind of infrastructure labor that recalibrates your
@@ -194,109 +221,51 @@ export default function StoryPage() {
           </div>
         </section>
 
-        {/* ── OILFIELD PHOTOS ───────────────────────── */}
+        {/* ── 3-UP: oil-3, oil-4, oil-5 ────────────────── */}
         <section className="border-b border-[#1f1f1f] bg-[#0a0a0a]">
-          <div className="max-w-6xl mx-auto px-6 py-10">
-            <p className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#c0392b] mb-6">
+          <div className="max-w-6xl mx-auto px-6 pt-4 pb-0">
+            <p className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#c0392b] py-6">
               14 Years in the Field
             </p>
-
-            {/* Top row — 3 up */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-[#1f1f1f]">
-              {/* oil-1: red snubbing unit — show full rig from top */}
-              <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
+          </div>
+          <div className="grid grid-cols-3 gap-px bg-[#1f1f1f]">
+            {["/images/oil-3.webp", "/images/oil-4.webp", "/images/oil-5.webp"].map((src, i) => (
+              <div key={i} className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
                 <Image
-                  src="/images/oil-1.webp"
-                  alt="Snubbing unit"
+                  src={src}
+                  alt={`Field operations ${i + 1}`}
                   fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
+                  sizes="33vw"
                   className="object-contain"
                 />
               </div>
-              {/* oil-2: Red Adair gear — keep as is */}
-              <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
-                <Image
-                  src="/images/oil-2.webp"
-                  alt="Well intervention gear"
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-contain"
-                />
-              </div>
-              {/* oil-3: blue sky rig — show full picture from top */}
-              <div className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
-                <Image
-                  src="/images/oil-3.webp"
-                  alt="Rig against blue sky"
-                  fill
-                  sizes="(max-width: 768px) 50vw, 33vw"
-                  className="object-contain"
-                />
-              </div>
-            </div>
-
-            {/* Middle row — 2 up */}
-            <div className="grid grid-cols-2 gap-px bg-[#1f1f1f] mt-px">
-              {/* oil-4: command center with screens — center on face */}
-              <div className="relative overflow-hidden bg-[#111] h-72 md:h-80">
-                <Image
-                  src="/images/oil-4.webp"
-                  alt="Command center"
-                  fill
-                  sizes="50vw"
-                  className="object-contain"
-                />
-              </div>
-              {/* oil-5: field closeup face — pull focus to face */}
-              <div className="relative overflow-hidden bg-[#111] h-72 md:h-80">
-                <Image
-                  src="/images/oil-5.webp"
-                  alt="Field operations — face"
-                  fill
-                  sizes="50vw"
-                  className="object-contain"
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
-        {/* ── STORY PHOTOS — 2UP ────────────────────── */}
-        <section className="border-b border-[#e2e0db]">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 gap-px bg-[#e2e0db]">
-            {/* story-3: chainsaw — full frame center */}
-            <div className="relative overflow-hidden bg-[#1a1a1a] h-64 md:h-80">
-              <Image
-                src="/images/story-3.webp"
-                alt="Darrel Ardoin"
-                fill
-                sizes="(max-width: 768px) 50vw, 600px"
-                className="object-contain"
-              />
-            </div>
-            {/* story-4: kneeling in uniform — full frame center */}
-            <div className="relative overflow-hidden bg-[#1a1a1a] h-64 md:h-80">
-              <Image
-                src="/images/story-4.webp"
-                alt="Darrel Ardoin"
-                fill
-                sizes="(max-width: 768px) 50vw, 600px"
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* ── WHAT HE BUILT ─────────────────────────── */}
+        {/* ── WHAT HE BUILT (story-4 side frame) ───────── */}
         <section className="border-b border-[#e2e0db] bg-white">
-          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-start">
+
+            {/* Left: story-4 photo */}
             <div>
               <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#6b6b6b]">
                 What He Built
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
+              <div className="relative w-full mt-8 overflow-hidden h-72 md:h-96 bg-[#1a1a1a]">
+                <Image
+                  src="/images/story-4.webp"
+                  alt="Darrel Ardoin"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-contain"
+                />
+              </div>
             </div>
-            <div className="space-y-5">
+
+            {/* Right: text */}
+            <div className="space-y-5 md:pt-12">
               <h2
                 className="text-2xl md:text-3xl font-bold text-[#0f0f0f] leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
@@ -332,7 +301,7 @@ export default function StoryPage() {
           </div>
         </section>
 
-        {/* ── NEUROLOGICAL WIRING ───────────────────── */}
+        {/* ── NEUROLOGICAL WIRING (preview side frame) ─── */}
         <section className="border-b border-[#e2e0db]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-start">
             <div>
