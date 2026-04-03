@@ -6,30 +6,36 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Advisory",
   description:
-    "Cash flow stabilization, fractional COO, and turnaround advisory. Starting at $3,000.",
+    "Cash flow stabilization, fractional COO, and turnaround advisory. Results in 4 weeks.",
 };
 
 const services = [
   {
     n: "01",
     name: "Cash Flow Stabilization Sprint",
-    tagline: "7 days. 14 days. Maximum 30.",
-    price: "$3,000",
-    desc: "You have a cash flow problem. Not a bookkeeping problem — a decision and timing problem. This engagement maps your actual cash position, finds the bleeds, and gets you to stable ground fast. No retainer required to start seeing results.",
+    tagline: "4 weeks. Results guaranteed or we keep working.",
+    price: "$4,500",
+    priceNote: "First 4 weeks",
+    continuationPrice: "$3,000/mo",
+    continuationNote: "Ongoing business advisory following the sprint",
+    desc: "You have a cash flow problem. Not a bookkeeping problem — a decision and timing problem. This engagement maps your actual cash position, finds the bleeds, and gets you to stable ground. Results in 4 weeks. Clients who continue into ongoing advisory carry sprint credits forward.",
     deliverables: [
       "7/14-day cash visibility map",
       "Bleed identification and priority ranking",
       "Collections and deposit enforcement framework",
       "Start/Pause/Hold decision protocol",
-      "One follow-up session",
+      "Weekly check-in through the sprint",
     ],
   },
   {
     n: "02",
     name: "Fractional COO",
     tagline: "Ongoing. Embedded. Operational.",
-    price: "$4,500/mo",
-    desc: "You need someone in the chair — not a consultant who appears once and sends a report. This is embedded operational support: attending key meetings, reviewing decisions, identifying what's breaking before it costs you. Available to operators running $500K–$5M organizations navigating growth or instability.",
+    price: "$6,000–$10,000/mo",
+    priceNote: "Depending on scope and complexity",
+    continuationPrice: null,
+    continuationNote: null,
+    desc: "You need someone in the chair — not a consultant who appears once and sends a report. This is embedded operational support: attending key meetings, reviewing decisions, identifying what's breaking before it costs you. Scope and pricing depend on organization size, complexity, and depth of engagement.",
     deliverables: [
       "Weekly operations review",
       "Decision support on hires, contracts, and pivots",
@@ -179,6 +185,20 @@ export default function AdvisoryPage() {
                       >
                         {svc.price}
                       </span>
+                      {svc.priceNote && (
+                        <p className="text-xs text-[#8a8a8a] mt-1">{svc.priceNote}</p>
+                      )}
+                      {svc.continuationPrice && (
+                        <div className="mt-3 pt-3 border-t border-[#e2e0db]">
+                          <span
+                            className="text-lg font-bold text-[#c0392b]"
+                            style={{ fontFamily: "var(--font-display)" }}
+                          >
+                            {svc.continuationPrice}
+                          </span>
+                          <p className="text-xs text-[#8a8a8a] mt-0.5">{svc.continuationNote}</p>
+                        </div>
+                      )}
                     </div>
                   </div>
                   <p className="text-base text-[#4a4a4a] leading-relaxed mb-6 max-w-2xl">
