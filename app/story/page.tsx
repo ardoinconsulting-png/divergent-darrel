@@ -54,13 +54,13 @@ export default function StoryPage() {
                 Raceland, Louisiana
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
-              <div className="relative w-full mt-8 overflow-hidden" style={{ aspectRatio: "3/4" }}>
+              <div className="relative w-full mt-8 overflow-hidden h-80 md:h-[28rem]">
                 <Image
                   src="/images/tiller-kid.webp"
                   alt="Young Darrel — Raceland, Louisiana"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover object-center"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
@@ -108,14 +108,14 @@ export default function StoryPage() {
 
         {/* ── STORY PHOTOS — 2UP ────────────────────── */}
         <section className="border-b border-[#e2e0db]">
-          <div className="grid grid-cols-2 gap-px bg-[#e2e0db]">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 gap-px bg-[#e2e0db]">
             {["/images/story-1.webp", "/images/story-2.webp"].map((src, i) => (
-              <div key={i} className="relative overflow-hidden bg-[#1a1a1a]" style={{ aspectRatio: "4/3" }}>
+              <div key={i} className="relative overflow-hidden bg-[#1a1a1a] h-64 md:h-80">
                 <Image
                   src={src}
                   alt={`Darrel Ardoin — ${i + 1}`}
                   fill
-                  sizes="50vw"
+                  sizes="(max-width: 768px) 50vw, 600px"
                   className="object-cover"
                 />
               </div>
@@ -178,9 +178,9 @@ export default function StoryPage() {
               </p>
               <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
                 <em className="not-italic text-[#f8f7f4] font-semibold">
-                  &ldquo;I built somebody else&apos;s machines for twelve years. I did a
-                  really good job of it. But I never really stepped outside of
-                  that. So right now I am in that integration phase.&rdquo;
+                  &ldquo;I helped build an operation from nine million to over two
+                  hundred million. The day I left, they lost thirty million
+                  dollars in annual revenue. Then I decided it was my turn.&rdquo;
                 </em>
               </p>
               <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
@@ -232,22 +232,20 @@ export default function StoryPage() {
           </div>
         </section>
 
-        {/* ── STORY PHOTOS — 3UP ────────────────────── */}
+        {/* ── STORY PHOTOS — 2UP ────────────────────── */}
         <section className="border-b border-[#e2e0db]">
-          <div className="grid grid-cols-3 gap-px bg-[#e2e0db]">
-            {["/images/story-3.webp", "/images/story-4.webp", "/images/story-5.webp"].map(
-              (src, i) => (
-                <div key={i} className="relative overflow-hidden bg-[#1a1a1a]" style={{ aspectRatio: "4/3" }}>
-                  <Image
-                    src={src}
-                    alt={`Darrel Ardoin — ${i + 3}`}
-                    fill
-                    sizes="33vw"
-                    className="object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-              )
-            )}
+          <div className="max-w-6xl mx-auto grid grid-cols-2 gap-px bg-[#e2e0db]">
+            {["/images/story-3.webp", "/images/story-4.webp"].map((src, i) => (
+              <div key={i} className="relative overflow-hidden bg-[#1a1a1a] h-64 md:h-80">
+                <Image
+                  src={src}
+                  alt={`Darrel Ardoin — ${i + 3}`}
+                  fill
+                  sizes="(max-width: 768px) 50vw, 600px"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            ))}
           </div>
         </section>
 
