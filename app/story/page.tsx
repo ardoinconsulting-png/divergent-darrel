@@ -10,52 +10,6 @@ export const metadata: Metadata = {
     "From a sugarcane field in Raceland, Louisiana to 14 years in high-pressure well intervention. None of it was a straight line. All of it left a mark.",
 };
 
-const arc = [
-  {
-    n: "01",
-    role: "Tugboat Deckhand",
-    detail:
-      "The river at night. Manual labor before anyone handed you anything. Learning what real work feels like before you know what it's worth.",
-  },
-  {
-    n: "02",
-    role: "Lafourche Parish Sheriff's Deputy",
-    detail:
-      "Law enforcement. Interrogation. Negotiation under real pressure. Learning how human behavior actually works when the stakes are life and consequence — not performance reviews.",
-  },
-  {
-    n: "03",
-    role: "Harley-Davidson",
-    detail:
-      "Walked off the force and into a Harley-Davidson dealership the same day. Hired on the spot. Sold the most expensive bike on the floor his first month. The lesson: relationship and trust close more than pitch and pressure.",
-  },
-  {
-    n: "04",
-    role: "Outlaw Motorcycle Clubs",
-    detail:
-      "Rode with clubs that don't advertise their membership requirements. Learned how organizations built on loyalty, hierarchy, and silence actually function. Most leadership consultants have read about this. He lived it.",
-  },
-  {
-    n: "05",
-    role: "Heavy Civil and Maritime",
-    detail:
-      "Dragline crane operations. Tugboats and spud barges. The kind of physical infrastructure work that reminds you what scale actually means.",
-  },
-  {
-    n: "06",
-    role: "High-Pressure Well Intervention & Snubbing",
-    detail:
-      "14 years. Snubbing is the discipline of working live wellbores under pressure — the wells other crews won't touch. He rose from operator to field supervisor to completions consultant. Nicknamed The Author for rewriting the hydraulic workover standard at his company. His departure cost the company over $30M in annual customer revenue. 2023 W-2: $209,627.",
-    highlight: true,
-  },
-  {
-    n: "07",
-    role: "Fractional Strategic Advisor",
-    detail:
-      "Everything above, distilled and deployed. He walks into businesses, operations, and leadership teams the way he walked onto well sites — fresh eyes, no agenda, no position to protect. He reads what's actually happening and tells you the truth about it. That is the product.",
-  },
-];
-
 export default function StoryPage() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -79,30 +33,40 @@ export default function StoryPage() {
               high-pressure well intervention. None of it was a straight line.
               All of it left a mark.
             </p>
+            <div className="mt-8 border-l-2 border-[#c0392b]/40 pl-5">
+              <p
+                className="text-xl text-[#c8c4b4] font-medium leading-relaxed"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                &ldquo;Shook a thousand hands. Lived a thousand lives.&rdquo;
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* ── ORIGIN — WHERE IT STARTS ──────────────── */}
+        {/* ── ORIGIN — RACELAND ─────────────────────── */}
         <section className="border-b border-[#e2e0db] bg-white">
-          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-[1fr_2fr] gap-12 items-start">
-            {/* Left: label + photo */}
+          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-[5fr_7fr] gap-12 items-start">
+
+            {/* Left: photo */}
             <div>
               <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#6b6b6b]">
                 Raceland, Louisiana
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
-              <div className="relative aspect-[3/4] overflow-hidden mt-8">
+              <div className="relative w-full mt-8 overflow-hidden" style={{ aspectRatio: "3/4" }}>
                 <Image
                   src="/images/tiller-kid.webp"
                   alt="Young Darrel — Raceland, Louisiana"
                   fill
-                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
 
             {/* Right: text */}
-            <div className="space-y-5 md:pt-16">
+            <div className="space-y-5 md:pt-12">
               <h2
                 className="text-2xl md:text-3xl font-bold text-[#0f0f0f] leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
@@ -110,11 +74,11 @@ export default function StoryPage() {
                 You can&apos;t fake where you started.
               </h2>
               <p className="text-base text-[#4a4a4a] leading-relaxed">
-                Darrel Ardoin was born into a sugarcane field in Raceland,
+                Darrel Ardoin was raised inside a sugarcane field in Raceland,
                 Louisiana. Extreme poverty. Domestic violence. A family involved
                 in things that don&apos;t get discussed at school. He was expelled
                 from Central Lafourche High School. Then from South Lafourche.
-                He never went back.
+                He never went back. He didn&apos;t need to.
               </p>
               <p className="text-base text-[#4a4a4a] leading-relaxed">
                 Most people would call that a rough start. He calls it the
@@ -128,7 +92,7 @@ export default function StoryPage() {
                 skills. They are survival skills — and they translate directly
                 into every professional environment he has operated in since.
               </p>
-              <blockquote className="border-l-2 border-[#c0392b] pl-5 mt-6">
+              <blockquote className="border-l-2 border-[#c0392b] pl-5 pt-1">
                 <p
                   className="text-lg font-medium text-[#0f0f0f] leading-relaxed"
                   style={{ fontFamily: "var(--font-display)" }}
@@ -138,116 +102,208 @@ export default function StoryPage() {
                   are walls.&rdquo;
                 </p>
               </blockquote>
-
-              {/* Story photos grid */}
-              <div className="grid grid-cols-2 gap-2 pt-4">
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image src="/images/story-1.webp" alt="Darrel Ardoin" fill className="object-cover" />
-                </div>
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image src="/images/story-2.webp" alt="Darrel Ardoin" fill className="object-cover" />
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* ── STORY PHOTOS — ADDITIONAL ─────────────── */}
-        <section className="border-b border-[#e2e0db] bg-[#0f0f0f]">
-          <div className="grid grid-cols-3 gap-px bg-[#1f1f1f]">
-            {["/images/story-3.webp", "/images/story-4.webp", "/images/story-5.webp"].map((src, i) => (
-              <div key={i} className="relative aspect-[4/3] overflow-hidden">
+        {/* ── STORY PHOTOS — 2UP ────────────────────── */}
+        <section className="border-b border-[#e2e0db]">
+          <div className="grid grid-cols-2 gap-px bg-[#e2e0db]">
+            {["/images/story-1.webp", "/images/story-2.webp"].map((src, i) => (
+              <div key={i} className="relative overflow-hidden bg-[#1a1a1a]" style={{ aspectRatio: "4/3" }}>
                 <Image
                   src={src}
-                  alt={`Darrel Ardoin — ${i + 3}`}
+                  alt={`Darrel Ardoin — ${i + 1}`}
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-700"
+                  sizes="50vw"
+                  className="object-cover"
                 />
               </div>
             ))}
           </div>
         </section>
 
-        {/* ── CAREER ARC ────────────────────────────── */}
-        <section className="border-b border-[#e2e0db]">
+        {/* ── THE ARC — FLOWING NARRATIVE ───────────── */}
+        <section className="border-b border-[#e2e0db] bg-[#0f0f0f]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-            <div className="mb-12">
-              <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#6b6b6b]">
+            <div className="mb-10">
+              <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#888]">
                 The Arc
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
               <h2
-                className="mt-4 text-2xl md:text-3xl font-bold text-[#0f0f0f]"
+                className="mt-5 text-2xl md:text-3xl font-bold text-[#f8f7f4]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                34 years. Seven sectors. One thread.
+                34 years. Seven chapters. One thread.
               </h2>
             </div>
-            <div className="space-y-px bg-[#e2e0db]">
-              {arc.map((item) => (
-                <div
-                  key={item.n}
-                  className={`px-8 py-7 grid grid-cols-[2.5rem_1fr] md:grid-cols-[2.5rem_1fr_2fr] gap-x-6 gap-y-2 items-start ${item.highlight ? "bg-[#0f0f0f]" : "bg-[#f8f7f4]"}`}
-                >
-                  <span className={`text-xs font-bold tracking-widest pt-0.5 ${item.highlight ? "text-[#c0392b]" : "text-[#c0392b]"}`}>
-                    {item.n}
-                  </span>
-                  <h3
-                    className={`text-sm font-bold ${item.highlight ? "text-[#f8f7f4]" : "text-[#0f0f0f]"}`}
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {item.role}
-                    {item.highlight && (
-                      <span className="ml-3 text-[9px] tracking-[0.15em] uppercase font-bold text-[#c0392b] border border-[#c0392b]/40 px-2 py-0.5 align-middle">
-                        14 Years
-                      </span>
-                    )}
-                  </h3>
-                  <p className={`text-sm leading-relaxed col-start-2 md:col-start-3 ${item.highlight ? "text-[#888]" : "text-[#6b6b6b]"}`}>
-                    {item.detail}
-                  </p>
+
+            <div className="max-w-3xl space-y-6">
+              <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
+                The river. The badge. The Harley. The clubs. The rigs. Each one
+                was a different school, and none of them handed out diplomas.
+              </p>
+              <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
+                He started on the water — tugboat work at night, the kind that
+                happens in the dark, before anyone taught him what any of it was
+                worth. From there into law enforcement, where he learned how
+                human beings actually behave when the stakes are life and
+                consequence — not how they present, how they <em>are</em>. He
+                walked off the force and into a dealership the same day. Hired
+                on the spot. Sold the most expensive unit on the floor his first
+                month. The lesson landed early and never left: relationship and
+                trust close more than pitch and pressure.
+              </p>
+              <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
+                Then the clubs. He rode with organizations that don&apos;t advertise
+                their membership requirements. Learned firsthand how loyalty,
+                hierarchy, and silence function inside the structures that never
+                make the management books. Most leadership consultants have read
+                about those environments. He lived in them.
+              </p>
+              <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
+                Heavy civil and maritime work followed — dragline cranes, spud
+                barges, the kind of infrastructure labor that recalibrates your
+                understanding of scale. Then snubbing found him.
+                High-pressure well intervention: the discipline of working live
+                wellbores under pressure — the wells other crews won&apos;t touch.{" "}
+                <em className="not-italic text-[#f8f7f4] font-semibold">
+                  &ldquo;Cowboys. If we showed up, there was a problem.&rdquo;
+                </em>{" "}
+                He rose from operator to field supervisor to completions
+                consultant. Rewrote the hydraulic workover standard at his
+                company. Became the person teams called when the standard
+                playbook stopped working. Fourteen years of that.
+              </p>
+              <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
+                <em className="not-italic text-[#f8f7f4] font-semibold">
+                  &ldquo;I built somebody else&apos;s machines for twelve years. I did a
+                  really good job of it. But I never really stepped outside of
+                  that. So right now I am in that integration phase.&rdquo;
+                </em>
+              </p>
+              <p className="text-base md:text-lg text-[#c0bdb4] leading-relaxed">
+                The integration that followed is not a pivot. It is the natural
+                next chapter of someone who has shaken a thousand hands and
+                lived a thousand lives — and is now deploying everything forged
+                in all of them.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── OILFIELD PHOTOS ───────────────────────── */}
+        <section className="border-b border-[#1f1f1f] bg-[#0a0a0a]">
+          <div className="max-w-6xl mx-auto px-6 py-10">
+            <p className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#c0392b] mb-6">
+              14 Years in the Field
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-[#1f1f1f]">
+              {[
+                "/images/oil-1.webp",
+                "/images/oil-2.webp",
+                "/images/oil-3.webp",
+              ].map((src, i) => (
+                <div key={i} className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "4/3" }}>
+                  <Image
+                    src={src}
+                    alt={`Oilfield operations ${i + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="grid grid-cols-2 gap-px bg-[#1f1f1f] mt-px">
+              {["/images/oil-4.webp", "/images/oil-6.webp"].map((src, i) => (
+                <div key={i} className="relative overflow-hidden bg-[#111]" style={{ aspectRatio: "16/9" }}>
+                  <Image
+                    src={src}
+                    alt={`Oilfield operations ${i + 4}`}
+                    fill
+                    sizes="50vw"
+                    className="object-cover"
+                  />
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── OILFIELD SECTION ──────────────────────── */}
-        <section className="border-b border-[#e2e0db] bg-[#0f0f0f]">
-          <div className="max-w-6xl mx-auto px-6 py-12">
-            <div className="mb-8">
-              <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#c0392b]">
-                14 Years in the Field
+        {/* ── STORY PHOTOS — 3UP ────────────────────── */}
+        <section className="border-b border-[#e2e0db]">
+          <div className="grid grid-cols-3 gap-px bg-[#e2e0db]">
+            {["/images/story-3.webp", "/images/story-4.webp", "/images/story-5.webp"].map(
+              (src, i) => (
+                <div key={i} className="relative overflow-hidden bg-[#1a1a1a]" style={{ aspectRatio: "4/3" }}>
+                  <Image
+                    src={src}
+                    alt={`Darrel Ardoin — ${i + 3}`}
+                    fill
+                    sizes="33vw"
+                    className="object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </section>
+
+        {/* ── WHAT HE BUILT ─────────────────────────── */}
+        <section className="border-b border-[#e2e0db] bg-white">
+          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+            <div>
+              <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#6b6b6b]">
+                What He Built
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
+            </div>
+            <div className="space-y-5">
               <h2
-                className="mt-4 text-xl md:text-2xl font-bold text-[#f8f7f4]"
+                className="text-2xl md:text-3xl font-bold text-[#0f0f0f] leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                High-Pressure Well Intervention & Snubbing Operations
+                Operators build. Advisors advise. He does both.
               </h2>
-            </div>
-            {/* 3-up photo grid */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-[#1f1f1f] mb-px">
-              {["/images/oil-1.webp", "/images/oil-2.webp", "/images/oil-3.webp"].map((src, i) => (
-                <div key={i} className="relative aspect-[4/3] overflow-hidden">
-                  <Image src={src} alt={`Oilfield operations ${i + 1}`} fill className="object-cover" />
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-2 gap-px bg-[#1f1f1f]">
-              {["/images/oil-4.webp", "/images/oil-6.webp"].map((src, i) => (
-                <div key={i} className="relative aspect-[16/9] overflow-hidden">
-                  <Image src={src} alt={`Oilfield operations ${i + 4}`} fill className="object-cover" />
-                </div>
-              ))}
+              <p className="text-base text-[#4a4a4a] leading-relaxed">
+                Before the advisory work crystallized, Darrel built. Ardoin
+                Consulting Solutions — his consulting entity, through which he
+                has worked directly with operators, contractors, and small
+                business owners navigating cash flow, operations, and decisions
+                that don&apos;t appear in any framework. A salon — built, staffed,
+                and run. A JV contractor network assembled on relationships and
+                trust rather than contracts and org charts.
+              </p>
+              <p className="text-base text-[#4a4a4a] leading-relaxed">
+                None of these were built from a position of comfort or capital.
+                They were built by someone who had operated in high-stakes
+                environments long enough to understand that the difference
+                between an operator who makes it and one who doesn&apos;t is almost
+                never the size of their opportunity. It is how they handle cash,
+                people, and pressure simultaneously.
+              </p>
+              <blockquote className="border-l-2 border-[#c0392b] pl-5 pt-1">
+                <p
+                  className="text-base font-medium text-[#0f0f0f] leading-relaxed"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  &ldquo;I have no desire to own a business right now. What lights me
+                  up is helping other people&apos;s businesses succeed.&rdquo;
+                </p>
+              </blockquote>
+              <p className="text-base text-[#4a4a4a] leading-relaxed">
+                That&apos;s not a retreat from building. That&apos;s a man who has built
+                enough to know where his leverage actually is.
+              </p>
             </div>
           </div>
         </section>
 
         {/* ── NEUROLOGICAL WIRING ───────────────────── */}
-        <section className="border-b border-[#e2e0db] bg-white">
-          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-16 items-start">
+        <section className="border-b border-[#e2e0db]">
+          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12 items-start">
             <div>
               <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#6b6b6b]">
                 Neurological Wiring
@@ -260,12 +316,12 @@ export default function StoryPage() {
                 This isn&apos;t a metaphor. It&apos;s how the brain actually works.
               </h2>
               <p className="text-base text-[#4a4a4a] leading-relaxed mb-4">
-                Darrel&apos;s brain is wired differently. Not as a hook — as a
-                documented neurological fact. ADHD. Likely spectrum overlap.
-                CPTSD from early childhood. The same wiring that made him a
-                poor fit for conventional schooling made him exceptional in
-                environments that require rapid pattern recognition, tolerance
-                for chaos, and the ability to hold multiple complex variables
+                A highly neurodivergent mind forged by a lifetime of chosen and
+                environmental pressure — built for rapid, weighted decisions
+                with uncommon precision. The same wiring that made conventional
+                schooling a poor fit made him exceptional in environments that
+                require pattern recognition at speed, tolerance for chaos, and
+                the ability to hold multiple high-stakes variables
                 simultaneously without flinching.
               </p>
               <p className="text-base text-[#4a4a4a] leading-relaxed mb-4">
@@ -274,27 +330,40 @@ export default function StoryPage() {
                 soften their read to avoid friction. He sees it faster. He says
                 it plainly. He doesn&apos;t need your approval to tell you the truth.
               </p>
-              <p className="text-base text-[#4a4a4a] leading-relaxed">
+              <p className="text-base text-[#4a4a4a] leading-relaxed mb-6">
                 That is not a personality trait. That is the product.
               </p>
+              <blockquote className="border-l-2 border-[#c0392b] pl-5">
+                <p
+                  className="text-lg font-medium text-[#0f0f0f] leading-relaxed"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  &ldquo;Robots don&apos;t take risk. AI doesn&apos;t take risk either. That&apos;s the
+                  human competitive advantage — being able to integrate fear and
+                  feelings into decision, not just logic.&rdquo;
+                </p>
+                <p className="mt-3 text-xs text-[#8a8a8a]">— Darrel Ardoin</p>
+              </blockquote>
             </div>
+
             <div className="space-y-2">
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative overflow-hidden bg-[#1a1a1a]" style={{ aspectRatio: "3/4" }}>
                 <Image
-                  src="/images/shredded-yoga.webp"
-                  alt="Darrel Ardoin — mind and body discipline"
+                  src="/images/preview.webp"
+                  alt="Darrel Ardoin"
                   fill
-                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top"
                 />
               </div>
               <div className="bg-[#0f0f0f] p-8">
                 <p
-                  className="text-lg font-medium text-[#f8f7f4] leading-relaxed"
+                  className="text-base font-medium text-[#f8f7f4] leading-relaxed"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  &ldquo;The thing that got me expelled is the same thing that gets
-                  me hired. Pattern recognition doesn&apos;t care about your
-                  approval.&rdquo;
+                  &ldquo;There&apos;s no reality where you don&apos;t have hard times ahead of
+                  you. But having that fire inside of you, having that faith —
+                  that&apos;s what carries you past motivation and into discipline.&rdquo;
                 </p>
                 <p className="mt-4 text-xs text-[#555]">— Darrel Ardoin</p>
               </div>
