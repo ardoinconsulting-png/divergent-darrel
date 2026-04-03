@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 
 const services = [
   {
+    n: "01",
     name: "Cash Flow Stabilization Sprint",
     tagline: "7 days. 14 days. Maximum 30.",
     price: "$3,000",
@@ -23,9 +25,10 @@ const services = [
     ],
   },
   {
+    n: "02",
     name: "Fractional COO",
     tagline: "Ongoing. Embedded. Operational.",
-    price: "$4,500 / mo",
+    price: "$4,500/mo",
     desc: "You need someone in the chair — not a consultant who appears once and sends a report. This is embedded operational support: attending key meetings, reviewing decisions, identifying what's breaking before it costs you. Available to operators running $500K–$5M organizations navigating growth or instability.",
     deliverables: [
       "Weekly operations review",
@@ -36,6 +39,7 @@ const services = [
     ],
   },
   {
+    n: "03",
     name: "Turnaround Advisory",
     tagline: "When standard options are off the table.",
     price: "Scoped per engagement",
@@ -56,9 +60,19 @@ export default function AdvisoryPage() {
       <Nav />
       <main className="flex-1">
 
-        {/* ── DARK HERO ─────────────────────────── */}
-        <section className="bg-[#0f0f0f] border-b border-[#1f1f1f]">
-          <div className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+        {/* ── DARK HERO WITH OIL-4 BACKGROUND ──────── */}
+        <section className="relative border-b border-[#1f1f1f] bg-[#0f0f0f] overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/oil-4.webp"
+              alt="Field operations"
+              fill
+              className="object-cover opacity-25"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0f0f0f] via-[#0f0f0f]/85 to-[#0f0f0f]/50" />
+          </div>
+          <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-32">
             <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#c0392b]">
               Work With Me
             </span>
@@ -69,13 +83,13 @@ export default function AdvisoryPage() {
               Advisory
             </h1>
             <p className="mt-6 text-lg text-[#888] max-w-xl leading-relaxed">
-              You don&apos;t need a cheerleader. You need someone who will tell you
-              exactly what&apos;s wrong and what to do about it.
+              You don&apos;t need a cheerleader. You need someone who will tell
+              you exactly what&apos;s wrong and what to do about it.
             </p>
           </div>
         </section>
 
-        {/* ── WHO THIS IS FOR ───────────────────── */}
+        {/* ── WHO THIS IS FOR ───────────────────────── */}
         <section className="border-b border-[#e2e0db] bg-white">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-[1fr_2fr] gap-12 items-start">
             <div>
@@ -83,17 +97,27 @@ export default function AdvisoryPage() {
                 Who This Is For
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
+              <div className="relative aspect-square overflow-hidden mt-8">
+                <Image
+                  src="/images/oil-5.webp"
+                  alt="Field leadership"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
             <div className="space-y-4">
-              <p className="text-lg font-medium text-[#1a1a1a] leading-relaxed" style={{ fontFamily: "var(--font-display)" }}>
+              <p
+                className="text-lg font-medium text-[#1a1a1a] leading-relaxed"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
                 Leaders who are done with comfortable advice.
               </p>
               <p className="text-base text-[#4a4a4a] leading-relaxed">
-                Operators, executives, owners, and military leaders who
-                understand that the reason they&apos;re stuck isn&apos;t a lack of
-                information — it&apos;s a lack of someone willing to name what&apos;s
-                actually happening without protecting their own position in
-                the process.
+                Operators, executives, owners, and field leaders who understand
+                that the reason they&apos;re stuck isn&apos;t a lack of information —
+                it&apos;s a lack of someone willing to name what&apos;s actually happening
+                without protecting their own position in the process.
               </p>
               <p className="text-base text-[#4a4a4a] leading-relaxed">
                 If you want validation, I&apos;m the wrong call. If you want someone
@@ -101,7 +125,14 @@ export default function AdvisoryPage() {
                 read it, name it, and tell you what to do — let&apos;s talk.
               </p>
               <div className="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-[#e2e0db]">
-                {["Small business operators", "Military leaders", "Executives in transition", "Organizations in crisis", "Founders who need a reality check", "Anyone tired of being managed"].map((t) => (
+                {[
+                  "Small business operators",
+                  "Oilfield and energy contractors",
+                  "Executives in transition",
+                  "Organizations in crisis",
+                  "Founders who need a reality check",
+                  "Anyone tired of being managed",
+                ].map((t) => (
                   <div key={t} className="flex items-start gap-2">
                     <span className="mt-1.5 w-1 h-1 bg-[#c0392b] rounded-full flex-shrink-0" />
                     <span className="text-sm text-[#4a4a4a]">{t}</span>
@@ -112,7 +143,7 @@ export default function AdvisoryPage() {
           </div>
         </section>
 
-        {/* ── SERVICES ──────────────────────────── */}
+        {/* ── SERVICES ──────────────────────────────── */}
         <section className="border-b border-[#e2e0db]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
             <div className="mb-12">
@@ -122,13 +153,13 @@ export default function AdvisoryPage() {
               <div className="mt-2 w-8 h-0.5 bg-[#c0392b]" />
             </div>
             <div className="space-y-px bg-[#e2e0db]">
-              {services.map((svc, i) => (
+              {services.map((svc) => (
                 <div key={svc.name} className="bg-[#f8f7f4] p-8 md:p-10">
                   <div className="grid md:grid-cols-[2fr_1fr] gap-8 items-start mb-6">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
                         <span className="text-[10px] font-bold text-[#c0392b] tracking-widest">
-                          {String(i + 1).padStart(2, "0")}
+                          {svc.n}
                         </span>
                         <span className="text-[10px] tracking-[0.15em] uppercase font-semibold text-[#aaa]">
                           {svc.tagline}
@@ -159,7 +190,10 @@ export default function AdvisoryPage() {
                     </p>
                     <ul className="grid sm:grid-cols-2 gap-2">
                       {svc.deliverables.map((d) => (
-                        <li key={d} className="flex items-start gap-2 text-sm text-[#4a4a4a]">
+                        <li
+                          key={d}
+                          className="flex items-start gap-2 text-sm text-[#4a4a4a]"
+                        >
                           <span className="mt-1.5 w-1 h-1 bg-[#c0392b] rounded-full flex-shrink-0" />
                           {d}
                         </li>
@@ -172,7 +206,7 @@ export default function AdvisoryPage() {
           </div>
         </section>
 
-        {/* ── FIT CALL CTA ──────────────────────── */}
+        {/* ── FIT CALL CTA ──────────────────────────── */}
         <section className="border-b border-[#e2e0db] bg-[#0f0f0f]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
             <div>

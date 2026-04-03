@@ -15,9 +15,8 @@ export default function OutpostPage() {
       <Nav />
       <main className="flex-1">
 
-        {/* ── EARTHY DARK HERO ──────────────────── */}
+        {/* ── EARTHY DARK HERO ──────────────────────── */}
         <section className="relative border-b border-[#2a3020] bg-[#1a1f14] overflow-hidden">
-          {/* Subtle texture */}
           <div
             className="absolute inset-0 opacity-[0.06]"
             style={{
@@ -59,7 +58,7 @@ export default function OutpostPage() {
           </div>
         </section>
 
-        {/* ── HERO IMAGE ────────────────────────── */}
+        {/* ── HERO PHOTO — HORSE SUNSET ─────────────── */}
         <section className="border-b border-[#2a3020]">
           <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
             <Image
@@ -73,7 +72,28 @@ export default function OutpostPage() {
           </div>
         </section>
 
-        {/* ── THE VISION ────────────────────────── */}
+        {/* ── OUTPOST PHOTO GRID — 4 UP ─────────────── */}
+        <section className="border-b border-[#2a3020] bg-[#161b11]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#2a3020]">
+            {[
+              "/images/outpost-1.webp",
+              "/images/outpost-2.webp",
+              "/images/outpost-3.webp",
+              "/images/outpost-4.webp",
+            ].map((src, i) => (
+              <div key={i} className="relative aspect-square overflow-hidden">
+                <Image
+                  src={src}
+                  alt={`The Outpost ${i + 1}`}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ── THE VISION ────────────────────────────── */}
         <section id="vision" className="border-b border-[#2a3020] bg-[#1a1f14]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-[1fr_2fr] gap-12 items-start">
             <div>
@@ -87,7 +107,8 @@ export default function OutpostPage() {
                 className="text-2xl md:text-3xl font-bold text-[#e8e4d8] leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Thirty acres in Mississippi. Fire in the center. People around it.
+                Thirty acres in Mississippi. Fire in the center. People around
+                it.
               </h2>
               <p className="text-base text-[#7a8060] leading-relaxed">
                 The Outpost is a vision that has been taking shape for years.
@@ -121,7 +142,7 @@ export default function OutpostPage() {
           </div>
         </section>
 
-        {/* ── WHAT IT IS ────────────────────────── */}
+        {/* ── WHAT IT IS — 4 PILLARS ────────────────── */}
         <section className="border-b border-[#2a3020] bg-[#161b11]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
             <div className="mb-12">
@@ -153,7 +174,10 @@ export default function OutpostPage() {
                   body: "Small groups. Intentional. People who are serious about getting grounded — not performing getting grounded.",
                 },
               ].map((item) => (
-                <div key={item.title} className="bg-[#1a1f14] p-8 flex flex-col gap-4">
+                <div
+                  key={item.title}
+                  className="bg-[#1a1f14] p-8 flex flex-col gap-4"
+                >
                   <span className="text-2xl">{item.icon}</span>
                   <h3
                     className="text-lg font-bold text-[#e8e4d8]"
@@ -161,14 +185,29 @@ export default function OutpostPage() {
                   >
                     {item.title}
                   </h3>
-                  <p className="text-sm text-[#6b7060] leading-relaxed">{item.body}</p>
+                  <p className="text-sm text-[#6b7060] leading-relaxed">
+                    {item.body}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── GOFUNDME CTA ──────────────────────── */}
+        {/* ── BONFIRE PHOTO ─────────────────────────── */}
+        <section className="border-b border-[#2a3020]">
+          <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
+            <Image
+              src="/images/outpost-5.webp"
+              alt="Bonfire at The Outpost"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#161b11] via-transparent to-transparent" />
+          </div>
+        </section>
+
+        {/* ── GOFUNDME CTA ──────────────────────────── */}
         <section className="border-b border-[#2a3020] bg-[#1a1f14]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -240,7 +279,8 @@ export default function OutpostPage() {
         </section>
 
       </main>
-      {/* Dark footer variant for earthy pages */}
+
+      {/* Earthy footer */}
       <footer className="bg-[#111610] text-[#e8e4d8] border-t border-[#2a3020]">
         <div className="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p
@@ -249,7 +289,9 @@ export default function OutpostPage() {
           >
             Divergent<span className="text-[#8a9a60]">Darrel</span>
           </p>
-          <p className="text-xs text-[#444]">© {new Date().getFullYear()} Darrel Ardoin</p>
+          <p className="text-xs text-[#444]">
+            © {new Date().getFullYear()} Darrel Ardoin
+          </p>
           <a
             href="mailto:ardoinconsulting@outlook.com"
             className="text-xs text-[#555] hover:text-[#e8e4d8] transition-colors"

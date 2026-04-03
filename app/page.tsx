@@ -8,7 +8,7 @@ const navCards = [
     tag: "Origin",
     title: "The Story",
     href: "/story",
-    desc: "From a cane field in Raceland, Louisiana to the boardroom. 34 years of earning the right to say hard things.",
+    desc: "From a sugarcane field in Raceland, Louisiana to 14 years in high-pressure well intervention. 34 years of earning the right to say hard things.",
   },
   {
     tag: "Work With Me",
@@ -17,10 +17,10 @@ const navCards = [
     desc: "Cash flow stabilization, fractional COO, and turnaround advisory. Not cheerleading — diagnosis and action.",
   },
   {
-    tag: "Military Finance",
+    tag: "Contractor Cash Flow",
     title: "PCS Cash Control",
     href: "/pcs",
-    desc: "Cash flow and operations stabilization for contractors navigating a move. Stop bleeding money on transitions.",
+    desc: "Cash flow and operations stabilization for contractors. The bleeding is almost always in the timing, not the margin.",
   },
   {
     tag: "Weekly Dispatch",
@@ -42,7 +42,7 @@ export default function Home() {
       <Nav />
 
       <main className="flex-1">
-        {/* ── HERO ─────────────────────────────────── */}
+        {/* ── HERO ──────────────────────────────────── */}
         <section className="border-b border-[#e2e0db]">
           <div className="max-w-6xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-14 items-center">
             {/* Text */}
@@ -86,10 +86,10 @@ export default function Home() {
             <div className="order-1 md:order-2">
               <div className="relative aspect-[3/4] overflow-hidden">
                 <Image
-                  src="/images/command-center.webp"
-                  alt="Darrel Ardoin — Command Center"
+                  src="/images/hero-pic.webp"
+                  alt="Darrel Ardoin"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                   priority
                 />
                 <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#c0392b]" />
@@ -99,7 +99,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── WHO IS DARREL ────────────────────────── */}
+        {/* ── WHO IS DARREL ─────────────────────────── */}
         <section className="border-b border-[#e2e0db] bg-white">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-[1fr_2fr] gap-12 items-start">
             <div>
@@ -116,27 +116,31 @@ export default function Home() {
                 34 years. Field to boardroom. Everything in between.
               </p>
               <p className="text-base text-[#4a4a4a] leading-relaxed mb-4">
-                Darrel Ardoin started in a cane field. He&apos;s operated as a
-                tugboat deckhand, a sheriff, a Harley-Davidson specialist, an
-                informant running inside outlaw motorcycle clubs, an oilfield
-                snubbing operator, and a DWS supervisor before anyone handed
-                him a title that looked good on a business card.
+                Darrel Ardoin grew up in a sugarcane field in Raceland,
+                Louisiana. Not metaphorically. In the field, in the poverty, in
+                the kind of conditions that either sharpen you or break you. He
+                got expelled from two high schools. He never went back. He
+                didn&apos;t need to.
               </p>
               <p className="text-base text-[#4a4a4a] leading-relaxed mb-4">
-                He reads rooms. He spots dysfunction before the people causing
-                it can see it. His brain is wired differently — not as a
-                metaphor, as a fact — and that neurological difference is the
-                actual product.
+                What followed was 34 years of operating in environments where
+                being wrong costs something real — law enforcement, oilfield
+                completions, 14 years in high-pressure well intervention and
+                snubbing operations, field leadership, and now fractional
+                strategic advisory for operators and business owners who need
+                someone to tell them the truth before the damage gets worse.
               </p>
               <p className="text-base text-[#4a4a4a] leading-relaxed">
-                When you bring him in, you get the version that isn&apos;t managing
-                your feelings. You get what&apos;s true and what to do next.
+                He reads rooms. He identifies what is actually happening before
+                most people in the room can name it. His brain is wired
+                differently — not as a metaphor — and that wiring is the
+                product.
               </p>
             </div>
           </div>
         </section>
 
-        {/* ── NAV CARDS ────────────────────────────── */}
+        {/* ── NAV CARDS ─────────────────────────────── */}
         <section className="border-b border-[#e2e0db]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
             <div className="mb-10">
@@ -161,7 +165,7 @@ export default function Home() {
                       stroke="currentColor" strokeWidth="2"
                       className="text-[#ccc] group-hover:text-[#0f0f0f] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all mt-0.5"
                     >
-                      <path d="M7 17L17 7"/><path d="M7 7h10v10"/>
+                      <path d="M7 17L17 7" /><path d="M7 7h10v10" />
                     </svg>
                   </div>
                   <h3
@@ -177,7 +181,7 @@ export default function Home() {
                 </Link>
               ))}
               {/* Dark CTA card */}
-              <div className="bg-[#0f0f0f] p-8 flex flex-col gap-4 sm:col-span-2 lg:col-span-1">
+              <div className="bg-[#0f0f0f] p-8 flex flex-col gap-4">
                 <span className="text-[10px] tracking-[0.2em] uppercase font-bold text-[#c0392b]">
                   Free Weekly
                 </span>
@@ -204,7 +208,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── NEWSLETTER EMBED ─────────────────────── */}
+        {/* ── NEWSLETTER EMBED ──────────────────────── */}
         <section className="border-b border-[#e2e0db] bg-white">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-16 items-center">
             <div>
