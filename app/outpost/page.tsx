@@ -6,8 +6,21 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "The Outpost",
   description:
-    "Land, horses, fire, and people. A gathering place being built in Mississippi.",
+    "A community model built around land, fire, horses, gardens, and people coming together in a world that keeps pulling them apart.",
 };
+
+const elements = [
+  { icon: "🐴", title: "Horseback Riding", body: "Animals that respond to who you actually are, not who you present. There is no faking it with a horse." },
+  { icon: "🔥", title: "Fire & Outdoor Cooking", body: "Open fire. Cast iron. Slow meals with real people. The oldest form of community there is." },
+  { icon: "🌱", title: "Gardens", body: "Growing food together changes how people relate to each other and to the land beneath them." },
+  { icon: "🛖", title: "Creative Tiny Homes", body: "Intentional structures. Thoughtfully built. Space that reflects what a life of purpose actually looks like." },
+  { icon: "🚣", title: "Kayaking", body: "Water. Movement. The kind of quiet that comes from being in nature and having nowhere else to be." },
+  { icon: "🌿", title: "Trails & Nature", body: "Walk in. Leave something behind. The land does the work if you let it." },
+  { icon: "🧖", title: "Sauna & Cold Plunge", body: "The discipline of heat and cold. Clarity through discomfort. A practice, not a amenity." },
+  { icon: "🙏", title: "Spirituality & Ritual", body: "Not dogma. Not performance. The quiet practices that keep you anchored when everything else is moving." },
+  { icon: "🧘", title: "Grounding & Meditation", body: "Stillness is a skill. The Outpost is designed to make it accessible — even for people who don't think they're built for it." },
+  { icon: "🎉", title: "Community & Family Events", body: "Celebrations. Gatherings. People coming together across differences in a world that profits from keeping them apart." },
+];
 
 export default function OutpostPage() {
   return (
@@ -27,7 +40,7 @@ export default function OutpostPage() {
           />
           <div className="relative max-w-6xl mx-auto px-6 py-20 md:py-28">
             <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#8a9a60]">
-              Fire Gathering
+              Community Model
             </span>
             <h1
               className="mt-4 text-4xl md:text-6xl font-bold text-[#e8e4d8] leading-[1.05] tracking-tight max-w-3xl"
@@ -36,8 +49,10 @@ export default function OutpostPage() {
               The Outpost
             </h1>
             <p className="mt-6 text-lg text-[#8a9070] max-w-xl leading-relaxed">
-              Land, horses, fire, and people. A gathering place being built in
-              Mississippi. Thirty acres. Real ground. Come find your footing.
+              A model for living and gathering that most people have never
+              experienced — because nobody built it yet. Land, fire, horses,
+              gardens, and people coming together in a world that keeps pulling
+              them apart.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
@@ -63,7 +78,7 @@ export default function OutpostPage() {
           <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
             <Image
               src="/images/horse-sunset.webp"
-              alt="Horse at sunset — The Outpost, Mississippi"
+              alt="Horse at sunset — The Outpost"
               fill
               className="object-contain"
               priority
@@ -73,12 +88,11 @@ export default function OutpostPage() {
 
         {/* ── OUTPOST PHOTO GRID — 4 UP ─────────────── */}
         <section className="border-b border-[#2a3020] bg-[#161b11]">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#2a3020]">
+          <div className="grid grid-cols-3 gap-px bg-[#2a3020]">
             {[
               "/images/outpost-1.webp",
               "/images/outpost-2.webp",
               "/images/outpost-3.webp",
-              "/images/outpost-4.webp",
             ].map((src, i) => (
               <div key={i} className="relative aspect-square overflow-hidden">
                 <Image
@@ -106,26 +120,29 @@ export default function OutpostPage() {
                 className="text-2xl md:text-3xl font-bold text-[#e8e4d8] leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                Thirty acres in Mississippi. Fire in the center. People around
-                it.
+                A model. Not just a place.
               </h2>
               <p className="text-base text-[#7a8060] leading-relaxed">
-                The Outpost is a vision that has been taking shape for years.
-                Thirty acres of land in Mississippi. Space for horses. A fire
-                circle at the center. People who need to get out of their own
-                heads and back into something real.
+                The Outpost is not a retreat center. It is not a seminar venue.
+                It is a working model for the kind of community most people
+                quietly crave but have never seen built — one where land,
+                animals, food, water, fire, and people are woven together into
+                something that actually sustains you.
               </p>
               <p className="text-base text-[#7a8060] leading-relaxed">
-                This is not a retreat center. This is not a seminar. There are
-                no projector screens or breakout sessions. There is land. There
-                are animals. There is fire. There are people who have the
-                courage to sit still long enough to hear what they actually
-                think.
+                Creative tiny homes and intentional structures. Gardens that
+                produce real food. Horses and horseback riding. Kayaking on
+                open water. Trails that take you somewhere. A sauna and cold
+                plunge for the people who understand what that discipline
+                actually does. Fire circles for cooking, for gathering, for
+                the conversations that only happen when screens are put away.
               </p>
               <p className="text-base text-[#7a8060] leading-relaxed">
-                The modern world is very good at keeping you busy. The Outpost
-                exists to provide the opposite of that — a place where the
-                noise stops and you have to reckon with what&apos;s actually true.
+                Spirituality and ritual — not as performance, but as practice.
+                Grounding and meditation for people who have been moving so
+                fast they forgot what still feels like. Family events.
+                Community events. People coming together across every kind of
+                difference in a world that profits from keeping them divided.
               </p>
               <blockquote className="border-l-2 border-[#6b7a4a] pl-5 mt-6">
                 <p
@@ -141,45 +158,27 @@ export default function OutpostPage() {
           </div>
         </section>
 
-        {/* ── WHAT IT IS — 4 PILLARS ────────────────── */}
+        {/* ── WHAT IT INCLUDES ──────────────────────── */}
         <section className="border-b border-[#2a3020] bg-[#161b11]">
           <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
             <div className="mb-12">
               <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#6b7a4a]">
-                What It Is
+                What It Includes
               </span>
               <div className="mt-2 w-8 h-0.5 bg-[#6b7a4a]" />
+              <h2
+                className="mt-4 text-xl md:text-2xl font-bold text-[#e8e4d8]"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Everything that belongs together but rarely is.
+              </h2>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#2a3020]">
-              {[
-                {
-                  icon: "🌾",
-                  title: "Land",
-                  body: "Thirty acres of working land in Mississippi. Real ground. Not manicured. Not curated. Real.",
-                },
-                {
-                  icon: "🐴",
-                  title: "Horses",
-                  body: "Animals that respond to what you actually are, not what you present. There is no faking it with a horse.",
-                },
-                {
-                  icon: "🔥",
-                  title: "Fire",
-                  body: "The oldest gathering tool on earth. When you sit around a fire long enough, something honest eventually comes out.",
-                },
-                {
-                  icon: "👥",
-                  title: "People",
-                  body: "Small groups. Intentional. People who are serious about getting grounded — not performing getting grounded.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.title}
-                  className="bg-[#1a1f14] p-8 flex flex-col gap-4"
-                >
-                  <span className="text-2xl">{item.icon}</span>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[#2a3020]">
+              {elements.map((item) => (
+                <div key={item.title} className="bg-[#1a1f14] p-7 flex flex-col gap-3">
+                  <span className="text-xl">{item.icon}</span>
                   <h3
-                    className="text-lg font-bold text-[#e8e4d8]"
+                    className="text-base font-bold text-[#e8e4d8]"
                     style={{ fontFamily: "var(--font-display)" }}
                   >
                     {item.title}
@@ -193,6 +192,38 @@ export default function OutpostPage() {
           </div>
         </section>
 
+        {/* ── THE MODEL ─────────────────────────────── */}
+        <section className="border-b border-[#2a3020] bg-[#1a1f14]">
+          <div className="max-w-6xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+            <div>
+              <span className="text-[10px] tracking-[0.25em] uppercase font-bold text-[#6b7a4a]">
+                The Model
+              </span>
+              <div className="mt-2 w-8 h-0.5 bg-[#6b7a4a]" />
+            </div>
+            <div className="space-y-4">
+              <h2
+                className="text-2xl md:text-3xl font-bold text-[#e8e4d8] leading-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Built to be replicated.
+              </h2>
+              <p className="text-base text-[#7a8060] leading-relaxed">
+                This is not a one-location dream. The Outpost is a model —
+                a blueprint for intentional community living that can be
+                adapted, replicated, and scaled by anyone with the land, the
+                vision, and the willingness to build something that puts people
+                first.
+              </p>
+              <p className="text-base text-[#7a8060] leading-relaxed">
+                Every element — the tiny homes, the gardens, the experiences,
+                the gathering infrastructure — is designed with replication in
+                mind. The goal is not one Outpost. The goal is a way of living
+                that spreads because it works.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* ── GOFUNDME CTA ──────────────────────────── */}
         <section className="border-b border-[#2a3020] bg-[#1a1f14]">
@@ -206,19 +237,17 @@ export default function OutpostPage() {
                 className="text-3xl md:text-4xl font-bold text-[#e8e4d8] leading-tight mb-4"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                This place doesn&apos;t build itself.
+                This doesn&apos;t build itself.
               </h2>
               <p className="text-base text-[#7a8060] leading-relaxed mb-4">
-                Land costs money. Fencing costs money. Infrastructure costs
-                money. If this vision resonates — if you believe that people
-                need places like this — there&apos;s a way to be part of making it
-                real.
+                Land, structures, infrastructure, animals, and experiences all
+                cost real money. If this model resonates — if you believe
+                people need something like this — there is a way to be part
+                of making it real.
               </p>
               <p className="text-sm text-[#555] leading-relaxed">
                 Every contribution goes directly toward building a physical
-                space where people can get grounded. No overhead. No
-                organization. Just land, animals, fire, and the people who
-                show up to use them.
+                place where this vision can be lived and shared.
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -230,8 +259,8 @@ export default function OutpostPage() {
                   GoFundMe Campaign
                 </p>
                 <p className="text-sm text-[#6b7060] leading-relaxed mb-6">
-                  30 acres in Mississippi. Horses. Fire pit. Community space.
-                  The Outpost — coming 2025.
+                  Community land. Tiny homes. Gardens. Horses. Fire. Water.
+                  The Outpost — a model worth building.
                 </p>
                 <a
                   href="https://gofundme.com"
@@ -247,7 +276,7 @@ export default function OutpostPage() {
               </div>
               <div className="border border-[#3a4a2a] p-6 bg-[#161b11]">
                 <p className="text-sm text-[#6b7060] mb-3">
-                  Want to stay informed as this develops?
+                  Want to follow this as it develops?
                 </p>
                 <a
                   href="https://cutofclarity.beehiiv.com"
